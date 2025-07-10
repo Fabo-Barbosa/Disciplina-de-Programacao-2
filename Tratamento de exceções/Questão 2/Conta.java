@@ -4,15 +4,20 @@
 public class Conta {
 	private double saldo;
 	private double limite;
+	private double countSacado;
 	
 	public void depositar(double valor) {
 		this.saldo += valor;
 	}
 	
 	public void sacar(double valor) throws ContaExcecao {
-		if (valor > this.saldo || valor > this.limite)
+		// possívei erros que lançarão uma exceção do tipo ContaExcecao
+		// valor maior que o saldo
+		// valor excede o limite diário
+		if (valor > this.saldo || this.limite < (this.countSacado + valor))
 			throw new ContaExcecao(this.saldo);
 		this.saldo -= valor;
+		this.countSacado += valor;
 	}
 	
 	public void setLimite(double limite) {
