@@ -6,12 +6,17 @@ public class MainBiblioteca {
 		
 		Biblioteca bl = new Biblioteca();
 		
-		bl.adicionarLivro("A");
+		bl.adicionarLivro("C", "Davi", 1907);
+		
+		bl.adicionarLivro("C", "Davi", 1955);
 		
 		bl.adicionarLivro("B", "Washinton");
 		
-		bl.adicionarLivro("C", "Davi", 1907);
+		bl.adicionarLivro("A");
+		
 		
 		bl.exibirAcervo();
+		
+		bl.exibirLivrosOrdenados();
 	}
 }

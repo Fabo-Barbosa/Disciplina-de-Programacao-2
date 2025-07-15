@@ -1,4 +1,4 @@
-public class Livro {
+public class Livro implements Comparable<Livro> {
 	
 	private String titulo;
 	private String autor;
@@ -35,6 +35,19 @@ public class Livro {
 	
 	public int getAno() {
 		return this.ano;
+	}
+	
+	// reescrevendo métodos do java
+	// equals(Object ob)
+	public boolean equals(Object  ob) {
+		Livro livro = (Livro) ob;
+		return this.titulo == livro.getTitulo();
+	}
+	
+	// compareTo
+	public int compareTo(Livro l) {
+		
+		return this.titulo.compareTo(l.getTitulo());
 	}
 	
 }

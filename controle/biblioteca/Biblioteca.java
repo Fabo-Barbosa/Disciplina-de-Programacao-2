@@ -2,6 +2,7 @@
 // Método: adicionarLivro
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Biblioteca {
 	
@@ -32,6 +33,24 @@ public class Biblioteca {
 		quantLivros++;
 	}
 	
+	// função usa implicitamente o compareTo do contrato Comparable
+	public void exibirLivrosOrdenados() {
+		Collections.sort(this.livros);
+		this.exibirAcervo();
+	}
+	
+	public int contaRepetidos(Livro l) {
+		int count = 0;
+		
+		for (Livro liv: this.livros) {
+			if (l.equals(liv)) {
+				count++;
+			}
+		}
+		
+		return count;
+	}
+	
 	public void exibirAcervo() {
 		
 		System.out.println("TITULO\tAUTOR\tANO");
@@ -52,4 +71,5 @@ public class Biblioteca {
 			}
 		}
 	}
+	
 }
