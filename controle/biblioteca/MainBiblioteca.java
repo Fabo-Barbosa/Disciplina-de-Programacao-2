@@ -10,13 +10,17 @@ public class MainBiblioteca {
 		
 		bl.adicionarLivro("C", "Davi", 1955);
 		
-		bl.adicionarLivro("B", "Washinton");
+		bl.adicionarLivro("B", "Washinton", 2013);
 		
-		bl.adicionarLivro("A");
+		bl.adicionarLivro("A", "Chloe", 2003);
 		
-		
+		System.out.println("Livros\n");
 		bl.exibirAcervo();
 		
-		bl.exibirLivrosOrdenados();
+		System.out.println("Livros ordenados por titulo:\n");
+		bl.exibirLivrosOrdenadosT();
+		
+		System.out.println("Livros ordenados pelo ano:\n");
+		bl.exibirLivrosOrdenadosA();
 	}
 }

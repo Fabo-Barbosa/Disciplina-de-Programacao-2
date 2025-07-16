@@ -3,6 +3,7 @@
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class Biblioteca {
 	
@@ -34,8 +35,14 @@ public class Biblioteca {
 	}
 	
 	// função usa implicitamente o compareTo do contrato Comparable
-	public void exibirLivrosOrdenados() {
+	public void exibirLivrosOrdenadosT() {
 		Collections.sort(this.livros);
+		this.exibirAcervo();
+	}
+	
+	// função usa implicitamente o compareTo do contrato Comparable
+	public void exibirLivrosOrdenadosA() {
+		Collections.sort(this.livros, new ComparaAno());
 		this.exibirAcervo();
 	}
 	
@@ -72,4 +79,12 @@ public class Biblioteca {
 		}
 	}
 	
+}
+
+class ComparaAno implements Comparator<Livro> {
+	
+	public int compare(Livro l1, Livro l2) {
+		
+		return l1.getAno() - l2.getAno();
+	}
 }
